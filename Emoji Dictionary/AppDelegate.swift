@@ -3,7 +3,7 @@
 //  Emoji Dictionary
 //
 //  Created by Neil Johnson on 26/10/16.
-//  Copyright © 2016 Smokeypo. All rights reserved.
+//  Copyright © 2016 Smokeypo. All rights reserved...
 //
 
 import UIKit
