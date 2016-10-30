@@ -49,6 +49,28 @@ class DefinitionViewController: UIViewController {
             definitionLabel.text = "A Happy Sun Flower"
         }
         
+        if emoji == "⚽️" {
+            definitionLabel.text = "A Soccer Ball"
+        }
+        
+        if emoji == "😀" {
+            definitionLabel.text = "Laughing out Loud Again"
+        }
+        if emoji == "🐟" {
+            definitionLabel.text = "The Blue Fish"
+        }
+        if emoji == "🐝" {
+            definitionLabel.text = "The Bumble Bee"
+        }
+        
+        if emoji == "🌵" {
+            definitionLabel.text = "The Cacti"
+        }
+        
+        if emoji == "🍄" {
+            definitionLabel.text = "Mushroom"
+        }
+        
         
     }
     override func didReceiveMemoryWarning() {
