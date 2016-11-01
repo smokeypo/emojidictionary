@@ -13,8 +13,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var dacooltableview: UITableView! /* property */
     
     
-    var emojis = ["🍏","🍒","🍉","🎩","🐏","😀","🌻","⚽️","😀","🐟","🐝","🌵","🍄"] /* property */
+    /*var emojis = ["🍏","🍒","🍉","🎩","🐏","😀","🌻","⚽️","😀","🐟","🐝","🌵","🍄"] /* property */ */
     
+    
+    var emojis : [Emoji] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         dacooltableview.dataSource = self
         dacooltableview.delegate = self
+        emojis = makeEmojiArry()
     }
     
     /* methods */
@@ -33,7 +36,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     /* methods */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
+        cell.textLabel?.text = emoji.stringEmoji
         return cell
     }
     
@@ -48,7 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       let defVC = segue.destination as!
         DefinitionViewController
-        defVC.emoji = sender as! String
+        defVC.emoji = sender as! Emoji
     }
     
 /* methods */
@@ -57,6 +61,82 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    func makeEmojiArry() -> [Emoji] {
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "🍏"
+        emoji1.birthYear = 2010
+        emoji1.catergory = "Fruit"
+        emoji1.definition = "A Green Apple"
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "🍒"
+        emoji2.birthYear = 1999
+        emoji2.catergory = "Fruit"
+        emoji2.definition = "Two Red Cherries"
+        
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "🍉"
+        emoji3.birthYear = 1969
+        emoji3.catergory = "Fruit"
+        emoji3.definition = "A slice of Watermelon"
+        
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "🎩"
+        emoji4.birthYear = 1929
+        emoji4.catergory = "Apparell"
+        emoji4.definition = "A Black TopHat"
+        
+        let emoji5 = Emoji()
+        emoji5.stringEmoji = "🐏"
+        emoji5.birthYear = 1959
+        emoji5.catergory = "Animal"
+        emoji5.definition = "A white sheep"
+        
+        let emoji6 = Emoji()
+        emoji6.stringEmoji = "😀"
+        emoji6.birthYear = 2009
+        emoji6.catergory = "Expression"
+        emoji6.definition = "A Smiley Face"
+        
+        let emoji7 = Emoji()
+        emoji7.stringEmoji = "🌻"
+        emoji7.birthYear = 2001
+        emoji7.catergory = "Plant"
+        emoji7.definition = "A Sunflower"
+        
+        let emoji8 = Emoji()
+        emoji8.stringEmoji = "⚽️"
+        emoji8.birthYear = 2011
+        emoji8.catergory = "Sport"
+        emoji8.definition = "A Soccer Ball"
+        
+        let emoji9 = Emoji()
+        emoji9.stringEmoji = "😀"
+        emoji9.birthYear = 2013
+        emoji9.catergory = "Expression"
+        emoji9.definition = "Another Smily Face"
+        
+        let emoji10 = Emoji()
+        emoji10.stringEmoji = "🐟"
+        emoji10.birthYear = 1971
+        emoji10.catergory = "Sea Life"
+        emoji10.definition = "A Blue Fish"
+        
+        let emoji11 = Emoji()
+        emoji11.stringEmoji = "🌵"
+        emoji11.birthYear = 1976
+        emoji11.catergory = "Plant"
+        emoji11.definition = "Cacti"
+        
+        let emoji12 = Emoji()
+        emoji12.stringEmoji = "🍄"
+        emoji12.birthYear = 1966
+        emoji12.catergory = "Plant"
+        emoji12.definition = "Mushroom"
+        
+        return [emoji1, emoji2, emoji3, emoji4, emoji5, emoji6, emoji7, emoji8, emoji9, emoji10, emoji11, emoji12]
+        
+    }
 
 }
 
